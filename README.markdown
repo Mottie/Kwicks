@@ -1,12 +1,15 @@
 **Features**
 
+* Updated version of [Kwicks for jQuery 1.5.1][1] by Jeremy Martin.
 * Horizontal and Vertical Modes.
 * Min vs. Max - Specify the width/height of all non-active kwicks instead.
 * Sticky Mode - When enabled, one kwick will always be open. This allows for more of an "accordion" type experience.
-* Custom Trigger Events - specify the trigger event for the animation.
-* Smooth Animation
+* Custom Trigger Events - specify a trigger event for the opening &ampl closing animation.
+* Smooth Animation.
+* Get or set the active kwick, or collapse all kwicks.
+* Event hooks &amp; callbacks added to allow extension of the plugin.
 
-**Usage & Options** ([Demo][1])
+**Usage & Options** ([Demo][2])
 
 Header:
 
@@ -50,19 +53,19 @@ Script (showing all defaults):
 
 * Expanded Kwick? (if sticky is set to true, this will always return true)
 
-           $('#kwicks1').data('kwicks').isActive(); // returns true if kwick is expanded, or false if collapsed
+        $('#kwicks1').data('kwicks').isActive(); // returns true if kwick is expanded, or false if collapsed
 
 * Get expanded kwick (index)
 
-           $('#kwicks1').data('kwicks').getActive(); // returns zero based index if kwick is expanded; returns -1 if collapsed
+        $('#kwicks1').data('kwicks').getActive(); // returns zero based index if kwick is expanded; returns -1 if collapsed
 
 * Set expanded kwick
 
-           $('#kwicks1').data('kwicks').openKwick(2); // opens the third kwick panel (zero based index)
+        $('#kwicks1').data('kwicks').openKwick(2); // opens the third kwick panel (zero based index)
 
 * Collapse kwick (this will not work on sticky kwicks - that just sounds wrong LOL)
 
-           $('#kwicks1').data('kwicks').closeKwick(); // collapses the kwick panel
+        $('#kwicks1').data('kwicks').closeKwick(); // collapses the kwick panel
 
 **Extending**
 
@@ -75,17 +78,17 @@ Script (showing all defaults):
 
 * Examples: You can bind to any of these custom event triggers as follows (see the demo page source for another example)
 
-           $('#kwicks1').bind('kwicks-completed', function(e, kwicks){
-             alert( 'kwick has completed opening panel #' + kwicks.active );
-           })
+        $('#kwicks1').bind('kwicks-completed', function(e, kwicks){
+          alert( 'kwick has completed opening panel #' + kwicks.active );
+        })
 
 * or use on of the callback functions
 
-           $('#kwicks').kwicks({
-             completed: function(){
-               alert('done!'); 
-             }
-           });
+        $('#kwicks').kwicks({
+          completed: function(){
+            alert('done!'); 
+          }
+        });
 
 * Callback Arguments ( if you use "kwicks" in the callback function, e.g. function(kwicks){...}, or in the trigger function, e.g. function(e, kwicks){...} these arguments will be available )
 
@@ -113,11 +116,11 @@ From the basic HTML above, classes are added to the Kwick panel as follows:
 
 Version 2.0 (11/8/2010)
 
-* Original [Kwicks version 1.5.1][2] by Jeremy Martin.
+* Original [Kwicks version 1.5.1][1] by Jeremy Martin.
 * Made a copy from [Jeremy's google code][3] and added to github.
 * Change plugin base pattern to ease use of plugin getters and setters.
 * Added custom events & triggers.
 
-  [1]: http://mottie.github.com/Kwicks
-  [2]: http://www.jeremymartin.name/projects.php?project=kwicks
+  [1]: http://www.jeremymartin.name/projects.php?project=kwicks
+  [2]: http://mottie.github.com/Kwicks
   [3]: http://code.google.com/p/kwicks/
