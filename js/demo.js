@@ -11,6 +11,16 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.controller a').click(function(){
+		var val = $(this).text();
+		if (val != 'Collapse') {
+			$('#basic').data('kwicks').openKwick(val);
+		} else {
+			$('#basic').data('kwicks').closeKwick();
+		}
+		return false;
+	})
+
 	$('#example1').kwicks({
 		max: 205,
 		spacing: 5

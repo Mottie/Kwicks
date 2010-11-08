@@ -108,6 +108,11 @@ pre.html {
 	margin-left: 275px;
 }
 
+.controller a {
+	display: inline-block;
+	width: 10px;
+}
+
 /* main page */
 #basic li{
 	float: left;
