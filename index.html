@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+	<title>Kwicks Example Page</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+
+	<!-- IMPORTANT!!! Include the stylesheet *BEFORE* the JavaScript (necessary for Safari 3.1.1) -->
+	<link href="css/kwicks.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery.kwicks.min.js" type="text/javascript"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<script src="js/demo.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+	<div class="example-info">
+
+		<h3>Kwicks for jQuery v2.0</h3>
+		<a class="download" href="http://github.com/Mottie/Kwicks/downloads" title="Download Kwicks">Download</a>
+
+
+		<h4>Examples: </h4>
+		<a href="#top">Basic</a>
+		<a href="#ex1">1</a>
+		<a href="#ex2">2</a>
+		<a href="#ex3">3</a>
+		<a href="#ex4">4</a>
+		<a href="#ex5">5</a>
+		<a href="#ex6">6</a>
+		<a href="#ex7">7</a>
+
+		<h4>Events (interact with a kwick):</h4>
+		<ul class="eventsWindow"></ul>
+
+		<h4>Links: </h4>
+		<ul class="links">
+			<li><a href="http://mottie.github.com/Kwicks">Documents for Kwicks v2.0</a></li>
+			<li><a href="http://www.jeremymartin.name/projects.php?project=kwicks">Blog Post (version 1.5.1)</a></li>
+		</ul>
+
+	</div>
+
+	<a id="top" class="anchor"></a>
+	<div class="example-wrap">
+
+		<h1>Basic Demo (v2.0) - Click to open &amp; close</h1>
+		<ul id="basic">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<pre class="css"><code>#basic li{
+  float: left;
+  width: 125px;
+  height: 100px;
+  margin-right: 5px;
+}
+#basic .kwick1 { background: #53b388; }
+#basic .kwick2 { background: #5a69a9; }
+#basic .kwick3 { background: #c26468; }
+#basic .kwick4 { background: #bf7cc7; }
+<span class="comment">/* cancel margin on last kwick (if you set a margin above) */</span>
+#basic .kwicks.horizontal .kwick4 { margin-right: none; }
+<span class="comment">/* cancel margin on last kwick (if you set a margin above) */</span>
+#basic .kwicks.vertical .kwick4 { margin-bottom: none; }</code></pre>
+		<pre class="html"><code>&lt;ul id=&quot;basic&quot;&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		<pre class="script"><code>$('#basic').kwicks({
+  event : 'click',
+  eventClose: 'click',
+  max : 330,
+  spacing : 5,
+  completed : function(){
+    addMessage('&lt;span class="hilight"&gt;something, something,' +
+      'something... com-plete&lt;/span&gt;');
+  }
+});</code></pre>
+		<div class="clear spacer"></div>
+
+		<a id="ex1" class="anchor"></a>
+		<h1>Example 1: A la Mootools</h1>
+		<ul id="example1">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<pre class="css"><code>#example1 li{
+  float: left;
+  width: 125px;
+  height: 100px;
+  margin-right: 5px;
+}
+#example1 .kwick1 { 
+  background: #53b388 url('../images/meet.gif');
+}
+#example1 .kwick2 {
+  background: #5a69a9 url('../images/kwicks.gif');
+}
+#example1 .kwick3 {
+  background: #c26468 url('../images/for.gif');
+}
+#example1 .kwick4 { 
+  background: #bf7cc7 url('../images/jquery.gif');
+  margin-right: none;
+}</code></pre>
+		<pre class="html"><code>&lt;ul id=&quot;example1&quot;&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		<pre class="script"><code>$('#example1').kwicks({
+  max: 205,
+  spacing: 5
+});</code></pre>		<div class="clear spacer"></div>
+
+		<a id="ex2" class="anchor"></a>
+		<h1>Example 2: Using &quot;Active&quot; Class</h1>
+		<ul id="example2">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<pre class="css"><code>#example2 li {
+  float: left;
+  width: 125px;
+  height: 100px;
+  margin-right: 5px;
+}
+#example2 .kwick1 { background: #53b388; }
+#example2 .kwick2 { background: #5a69a9; }
+#example2 .kwick3 { background: #c26468; }
+#example2 .kwick4 { background: #bf7cc7; margin-right: none; }
+#example2 .kwick1.active { background: #86e6bb; }
+#example2 .kwick2.active { background: #8d9cdc; }
+#example2 .kwick3.active { background: #f5979b; }
+#example2 .kwick4.active { background: #efaffa; }</code></pre>
+		<pre class="html"><code>&lt;ul id=&quot;example2&quot;&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		<pre class="script"><code>$('#example2').kwicks({
+  max: 205,
+  spacing: 5
+});</code></pre>
+		<div class="clear spacer"></div>
+
+		<a id="ex3" class="anchor"></a>
+		<h1>Example 3: Verticle Arrangement</h1>
+		<ul id="example3">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<pre class="css"><code>#example3 li{
+  width: 125px;
+  height: 100px;
+  margin-bottom: 3px;
+}
+#example3 .kwick1 { background: #ff5100; }
+#example3 .kwick2 { background: #b33900; }
+#example3 .kwick3 { background: #ffd000; }
+#example3 .kwick4 { background: #b39200; margin-bottom: none; }</code></pre>
+		<pre class="html"><code>&lt;ul id=&quot;example3&quot;&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		<pre class="script"><code>$('#example3').kwicks({
+  max : 205,
+  spacing : 3,
+  isVertical : true
+});</code></pre>
+		<div class="clear spacer"></div>
+
+		<a id="ex4" class="anchor"></a>
+		<h1>Example 4: Use Min instead of Max</h1>
+		<ul id="example4">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<pre class="css"><code>#example4 li{
+  width: 125px;
+  height: 100px;
+  margin-bottom: 3px;
+}
+#example4 .kwick1 { background: #008da3; }
+#example4 .kwick2 { background: #f07000; }
+#example4 .kwick3 { background: #a33100; }
+#example4 .kwick4 { background: #8cab2b; margin-bottom: none; }
+</code></pre>
+		<pre class="html"><code>&lt;ul id=&quot;example4&quot;&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		<pre class="script"><code>$('#example4').kwicks({
+  min : 30,
+  spacing : 3,
+  isVertical : true
+});</code></pre>
+		<div class="clear spacer"></div>
+
+		<a id="ex5" class="anchor"></a>
+		<h1>Example 5: Using Sticky and Custom Event</h1>
+		(this example uses 'click' as the custom event)
+		<ul id="example5">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<pre class="css"><code>#example5 li{
+  width: 125px;
+  height: 100px;
+  margin-bottom: 3px;
+}
+#example5 .kwick1 { background: #4D9AA8; }
+#example5 .kwick2 { background: #82A616; }
+#example5 .kwick3 { background: #F29A1F; }
+#example5 .kwick4 { background: #A66A16; margin-bottom: none; }
+</code></pre>
+		<pre class="html"><code>&lt;ul id=&quot;example5&quot;&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		<pre class="script"><code>$('#example5').kwicks({
+  min : 30,
+  spacing : 3,
+  isVertical : true,
+  sticky : true,
+  event : 'click'
+});</code></pre>
+		<div class="clear spacer"></div>
+
+		<a id="ex6" class="anchor"></a>
+		<h1>Example 6: Custom Easing and Duration</h1>
+		<ul id="example6">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<pre class="css"><code>#example6 li {
+  float: left;
+  width: 125px;
+  height: 100px;
+  margin-right: 5px;
+}
+#example6 .kwick1 { background: #53b388; }
+#example6 .kwick2 { background: #5a69a9; }
+#example6 .kwick3 { background: #c26468; }
+#example6 .kwick4 { background: #bf7cc7; margin-right: 0px; }
+</code></pre>
+		<pre class="html"><code>&lt;ul id=&quot;example6&quot;&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		<pre class="script"><code>$('#example6').kwicks({
+  max: 320,
+  spacing: 5,
+  duration: 1500,
+  easing: 'easeOutBounce'
+});</code></pre>
+		<div class="clear spacer"></div>
+
+		<a id="ex7" class="anchor"></a>
+		<h1>Example 7: Be Creative!</h1>
+		<p>What?  A little Nat King Cole can't hurt...</p>
+		<ul id="example7">
+			<li>
+				<div class="kwicks_inner_inner">
+					<div class="bigLetter">L</div>
+					<div class="smallText">is for the way you look at me</div>
+				</div>
+			</li>
+			<li>
+				<div class="kwicks_inner">
+					<div class="bigLetter">O</div>
+					<div class="smallText">is for the only one I see</div>
+				</div>
+			</li>
+			<li>
+				<div class="kwicks_inner">
+					<div class="bigLetter">V</div>
+					<div class="smallText">is very, very extraordinary</div>
+				</div>
+			</li>
+			<li>
+				<div class="kwicks_inner">
+					<div class="bigLetter">E</div>
+					<div class="smallText">is even more... I refuse to finish this...</div>
+				</div>
+			</li>
+		</ul>
+		<pre class="css"><code>#example7 li {
+  float: left;
+  width: 90px;
+  height: 100px;
+}
+#example7 .kwicks_inner {
+  width: 200px;
+}
+#example7 .bigLetter {
+  font-size: 60px;
+  height: 100px;
+  color: red;
+  float: left;
+}
+#example7 .smallText {
+  display: none;
+  text-align: center;
+  width: 140px;
+  color: #ccc;
+  font-size: 16px;
+  margin-top: 13px;
+  float: right;
+}
+#example7 li.active .smallText {
+  display: block;
+}</code></pre>
+		<pre class="html"><code>&lt;ul id=&quot;example7&quot;&gt;
+ &lt;li&gt;
+  &lt;div class=&quot;kwicks_inner_inner&quot;&gt;
+   &lt;div class=&quot;bigLetter&quot;&gt;L&lt;/div&gt;
+   &lt;div class=&quot;smallText&quot;&gt;is for the way you look at me&lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;div class=&quot;kwicks_inner&quot;&gt;
+   &lt;div class=&quot;bigLetter&quot;&gt;O&lt;/div&gt;
+   &lt;div class=&quot;smallText&quot;&gt;is for the only one I see&lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;div class=&quot;kwicks_inner&quot;&gt;
+   &lt;div class=&quot;bigLetter&quot;&gt;V&lt;/div&gt;
+   &lt;div class=&quot;smallText&quot;&gt;is very, very extraordinary&lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;div class=&quot;kwicks_inner&quot;&gt;
+   &lt;div class=&quot;bigLetter&quot;&gt;E&lt;/div&gt;
+   &lt;div class=&quot;smallText&quot;&gt;is even more... I refuse to finish
+    this...&lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		<pre class="script"><code>$('#example7').kwicks({
+    max: 200,
+    duration: 400,
+    sticky: true
+});</code></pre>
+		<div class="clear spacer"></div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+body {
+	background-image: none;
+	background-color: #1d1e21;
+	padding: 50px 0 0 50px;
+	text-align: left;
+	color: white;
+}
+
+a:link {
+	color: #5588aa;
+	text-decoration: none;
+}
+a:visited {
+	color: #5588aa;
+	text-decoration: none;
+}
+a:hover {
+	color: #cc6600;
+	text-decoration: underline;
+}
+a img {
+	border-width: 0;
+}
+a.anchor {
+	display: block;
+	margin-bottom: 10px;
+}
+h1 {
+	margin: 30px 0 10px 0;
+	padding: 0;
+	color: white;
+	font-size: 1.5em;
+}
+h3 {
+	font-size: 1.3em;
+	margin: 15px 5px;
+}
+pre {
+	width: 500px;
+	padding: 10px;
+}
+pre.css {
+	background: #333 url(../images/css.png) top right no-repeat;
+}
+pre.script {
+	background: #333 url(../images/script.png) top right no-repeat;
+}
+pre.html {
+	background: #333 url(../images/html.png) top right no-repeat;
+}
+
+.clear {
+	clear: both;
+}
+.spacer {
+	height: 250px;
+}
+
+.example-info {
+	width: 250px;
+	background-color: #3f3f54;
+	margin-top: 20px;
+	position: fixed;
+	top: 20px;
+	left: 25px;
+	padding: 10px;
+	z-index: 10;
+}
+.example-info a {
+	font-size: 1.1em;
+}
+.example-info h4 {
+	display: inline-block;
+	margin: 5px;
+}
+.download {
+	display: block;
+	border: 1px dashed #888;
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+}
+.download:hover {
+	background-color: #5e5e76;
+	text-decoration: none;
+	color: #aaa;
+}
+.eventsWindow {
+	padding-left: 10px;
+	margin-top: 2px;
+	list-style: none;
+	height: 120px;
+	font-size: .8em;
+}
+.hilight {
+	color: #ff8800;
+}
+.comment {
+	color: #5ac382;
+}
+.links, .links a {
+	padding-left: 10px;
+	margin-top: 2px;
+	list-style: none;
+}
+
+.example-wrap {
+	margin-left: 275px;
+}
+
+/* main page */
+#basic li{
+	float: left;
+	width: 125px;
+	height: 100px;
+	margin-right: 5px;
+}
+#basic .kwick1 { background: #53b388; }
+#basic .kwick2 { background: #5a69a9; }
+#basic .kwick3 { background: #c26468; }
+#basic .kwick4 { background: #bf7cc7; }
+/* cancel margin on last kwick (if you set a margin above) */
+#basic .kwicks.horizontal .kwick4 { margin-right: none; }
+/* cancel margin on last kwick (if you set a margin above) */
+#basic .kwicks.vertical .kwick4 { margin-bottom: none; }
+
+/* example 1 */
+#example1 li{
+	float: left;
+	width: 125px;
+	height: 100px;
+	margin-right: 5px;
+}
+#example1 .kwick1 { 
+	background: #53b388 url('../images/meet.gif');
+}
+#example1 .kwick2 {
+	background: #5a69a9 url('../images/kwicks.gif');
+}
+#example1 .kwick3 {
+	background: #c26468 url('../images/for.gif');
+}
+#example1 .kwick4 { 
+	background: #bf7cc7 url('../images/jquery.gif');
+	margin-right: none;
+}
+
+/* example 2 */
+#example2 li {
+	float: left;
+	width: 125px;
+	height: 100px;
+	margin-right: 5px;
+}
+#example2 .kwick1 { background: #53b388; }
+#example2 .kwick2 { background: #5a69a9; }
+#example2 .kwick3 { background: #c26468; }
+#example2 .kwick4 { background: #bf7cc7; margin-right: none; }
+#example2 .kwick1.active { background: #86e6bb; }
+#example2 .kwick2.active { background: #8d9cdc; }
+#example2 .kwick3.active { background: #f5979b; }
+#example2 .kwick4.active { background: #efaffa; }
+
+/* example3 */
+#example3 li{
+	width: 125px;
+	height: 100px;
+	margin-bottom: 3px;
+}
+#example3 .kwick1 { background: #FF5100; }
+#example3 .kwick2 { background: #B33900; }
+#example3 .kwick3 { background: #FFD000; }
+#example3 .kwick4 { background: #B39200; margin-bottom: none; }
+
+/* example4 */
+#example4 li{
+	width: 125px;
+	height: 100px;
+	margin-bottom: 3px;
+}
+#example4 .kwick1 { background: #008DA3; }
+#example4 .kwick2 { background: #F07000; }
+#example4 .kwick3 { background: #A33100; }
+#example4 .kwick4 { background: #8CAB2B; margin-bottom: none; }
+
+/* example5 */
+#example5 li{
+	width: 125px;
+	height: 100px;
+	margin-bottom: 3px;
+}
+#example5 .kwick1 { background: #4D9AA8; }
+#example5 .kwick2 { background: #82A616; }
+#example5 .kwick3 { background: #F29A1F; }
+#example5 .kwick4 { background: #A66A16; margin-bottom: none; }
+
+/* example6 */
+#example6 li {
+	float: left;
+	width: 125px;
+	height: 100px;
+	margin-right: 5px;
+}
+#example6 .kwick1 { background: #53b388; }
+#example6 .kwick2 { background: #5a69a9; }
+#example6 .kwick3 { background: #c26468; }
+#example6 .kwick4 { background: #bf7cc7; margin-right: 0px; }
+
+/* example7 */
+#example7 li {
+	float: left;
+	width: 90px;
+	height: 100px;
+}
+#example7 .kwicks_inner {
+	width: 200px;
+}
+#example7 .bigLetter {
+	font-size: 60px;
+	height: 100px;
+	color: red;
+	float: left;
+}
+#example7 .smallText {
+	display: none;
+	text-align: center;
+	width: 140px;
+	color: #ccc;
+	font-size: 16px;
+	margin-top: 13px;
+	float: right;
+}
+#example7 li.active .smallText {
+	display: block;
+}
