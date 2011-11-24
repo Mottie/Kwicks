@@ -1,4 +1,11 @@
-$(document).ready(function() {
+$(function() {
+
+	// Show message
+	var addMessage = function(m){
+		var events = $('.eventsWindow').append( '<li>' + m + '</li>' ).find('li');
+		if (events.length > 6) { events.eq(0).remove(); }
+	};
+
 
 	$('#basic').kwicks({
 		event : 'click',
@@ -12,14 +19,15 @@ $(document).ready(function() {
 	});
 
 	$('.controller a').click(function(){
-		var val = $(this).text();
-		if (val != 'Collapse') {
+		var fxn, val = $(this).text();
+		if (!val.match('Collapse|Play|Pause')) {
 			$('#basic').data('kwicks').openKwick(val);
 		} else {
-			$('#basic').data('kwicks').closeKwick();
+			fxn = (val === 'Collapse') ? 'closeKwick' : val.toLowerCase();
+			$('#basic').data('kwicks')[fxn]();
 		}
 		return false;
-	})
+	});
 
 	$('#example1').kwicks({
 		max: 205,
@@ -64,14 +72,15 @@ $(document).ready(function() {
 		sticky: true
 	});
 
-<!-- events for demo only --->
-	$('.kwicks').bind('kwicks-init kwicks-expanding kwicks-collapsing kwicks-completed', function(e, kwicks){
-		addMessage('#' + kwicks.el.id + ', panel-' + (kwicks.active + 1) + ' : ' + e.type)
-	})
+	// showing events for demo only
+	$('.kwicks').bind('kwicks-init kwicks-expanding kwicks-collapsing kwicks-completed kwicks-playing kwicks-paused', function(e, kwicks){
+		addMessage('#' + kwicks.el.id + ', panel-' + (kwicks.active + 1) + ' : ' + e.type);
+	});
 
-	addMessage = function(m){
-		var events = $('.eventsWindow').append( '<li>' + m + '</li>' ).find('li');
-		if (events.length > 6) { events.eq(0).remove(); }
-	}
+});
 
+$(window).load(function(){
+	$(".js").chili();
+	$(".html").chili();
+	$(".css").chili();
 });

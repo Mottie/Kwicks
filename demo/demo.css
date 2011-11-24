@@ -40,13 +40,13 @@ pre {
 	padding: 10px;
 }
 pre.css {
-	background: #333 url(../images/css.png) top right no-repeat;
+	background: #333 url(css.png) top right no-repeat;
 }
-pre.script {
-	background: #333 url(../images/script.png) top right no-repeat;
+pre.js{
+	background: #333 url(script.png) top right no-repeat;
 }
 pre.html {
-	background: #333 url(../images/html.png) top right no-repeat;
+	background: #333 url(html.png) top right no-repeat;
 }
 
 .clear {
@@ -108,11 +108,6 @@ pre.html {
 	margin-left: 275px;
 }
 
-.controller a {
-	display: inline-block;
-	width: 10px;
-}
-
 /* main page */
 #basic li{
 	float: left;
@@ -137,16 +132,16 @@ pre.html {
 	margin-right: 5px;
 }
 #example1 .kwick1 { 
-	background: #53b388 url('../images/meet.gif');
+	background: #53b388 url('meet.gif');
 }
 #example1 .kwick2 {
-	background: #5a69a9 url('../images/kwicks.gif');
+	background: #5a69a9 url('kwicks.gif');
 }
 #example1 .kwick3 {
-	background: #c26468 url('../images/for.gif');
+	background: #c26468 url('for.gif');
 }
 #example1 .kwick4 { 
-	background: #bf7cc7 url('../images/jquery.gif');
+	background: #bf7cc7 url('jquery.gif');
 	margin-right: none;
 }
 

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Kwicks Example Page</title>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+
+		<link href="css/kwicks.css" rel="stylesheet">
+		<script src="js/jquery.kwicks.js"></script>
+
+		<!-- demo stuff -->
+		<style>
+			body { margin: 30px; }
+			.kwick1 { background: #53b388; }
+			.kwick2 { background: #5a69a9; }
+			.kwick3 { background: #c26468; }
+			.kwick4 { background: #bf7cc7; }
+		</style>
+		<script>
+			$(function(){
+
+				$('#demo').kwicks({
+
+					// *** Appearance ***
+					max          : null,         // The width or height of a fully expanded kwick element
+					min          : 10,           // The width or height of a fully collapsed kwick element
+					spacing      : 0,            // The width (in pixels) separating each kwick element
+
+					isVertical   : false,        // Kwicks will align vertically if true
+
+					sticky       : false,        // One kwick will always be expanded if true
+					defaultKwick : 0,            // The initially expanded kwick (if and only if sticky is true). zero based
+
+					activeClass  : 'active',     // Class added to active (open) kwick
+
+					// *** Interaction ***
+					event        : 'mouseenter', // The event that triggers the expand effect
+					eventClose   : 'mouseleave', // The event that triggers the collapse effect
+
+					// *** Functionality ***
+					duration     : 500,          // The number of milliseconds required for each animation to complete
+					easing       : 'swing',      // Custom animation easing (requires easing plugin if anything other than 'swing' or 'linear')
+
+					// *** Slideshow ***
+					showDuration : 2000,         // Slideshow duration
+					showNext     : 1,            // set to 1 for left-to-right, -1 for right-to-left or 0 for a random slide
+
+					// *** Callbacks ***
+					init         : function(kwick){}, // event called when the event occurs (click or mouseover)
+					expanding    : function(kwick){}, // event called before kwicks expanding animation begins
+					collapsing   : function(kwick){}, // event called before kwicks collapsing animation begins
+					completed    : function(kwick){}, // event called when animation completes
+					playing      : function(kwick){}, // event called when slideshow starts
+					paused       : function(kwick){}  // event called when slideshow ends
+
+				});
+
+			});
+		</script>
+
+	</head>
+	<body>
+
+		<h1>Basic Kwicks Demo</h1>
+
+		<ul id="demo">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+	</body>
+</html>
