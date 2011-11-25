@@ -14,9 +14,9 @@
 * [Demo](http://mottie.github.com/Kwicks)
 * [Basic Demo](http://mottie.github.com/Kwicks/basic.html)
 * [Playground](http://jsfiddle.net/Mottie/y5Hty/)
-* [[Home]]
-* [[Setup]]
-* [[Methods]]
-* [[Callbacks]]
-* [[Theming]]
-* [[Change]]
+* [Home](https://github.com/Mottie/Kwicks/wiki)
+* [Setup](https://github.com/Mottie/Kwicks/wiki/Setup)
+* [Methods](https://github.com/Mottie/Kwicks/wiki/Methods)
+* [Callbacks](https://github.com/Mottie/Kwicks/wiki/Callbacks)
+* [Theming](https://github.com/Mottie/Kwicks/wiki/Theming)
+* [Change](https://github.com/Mottie/Kwicks/wiki/Change)
