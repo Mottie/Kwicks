@@ -20,3 +20,45 @@
 * [Callbacks](https://github.com/Mottie/Kwicks/wiki/Callbacks)
 * [Theming](https://github.com/Mottie/Kwicks/wiki/Theming)
 * [Change](https://github.com/Mottie/Kwicks/wiki/Change)
+
+###**Recent Changes**
+
+####Version 2.1.1 (11/28/2011)
+
+* Kwick no longer opens if you mouseenter & mouseleave quickly. Fix for [issue #2](https://github.com/Mottie/Kwicks/issues/2).
+
+####Version 2.1 (11/24/2011)
+
+* Fixed a problem that was happening in jQuery v1.7+ ([bug report](https://github.com/Mottie/Kwicks/issues/1)) where the kwicks would not collapse. Fix for [issue #1](https://github.com/Mottie/Kwicks/issues/1).
+* Added slideshow options:
+ * `showDuration` - Slideshow duration in milliseconds (default is 2000 ms).
+ * `showNext` - Slideshow method; `1` goes forward, `-1` goes backwards and `0` shows a random panel (default is 1).
+ * Start or stop the slideshow as follows:
+
+        ```javascript
+        // start slideshow
+        $('#kwick').kwicks('play');
+        // stop slideshow
+        $('#kwick').kwicks('pause');
+        ```
+
+ * Included `playing` and `paused` callbacks
+ * Included `kwicks-playing` and `kwicks-paused` events.
+ * Hovering over the kwicks will pause the slideshow. If `event` and `eventClose` are set to `click`, then the slideshow will resume when unhovered.
+* Added shortcut method to open and close kwicks:
+ * Open Kwick example (zero based index): `$('#kwick').kwicks(1);`.
+ * Close Kwick example (use any negative number): `$('#kwick').kwicks(-1);`.
+* Added shortcut callback method:
+ * Open or close Kwicks with a callback
+
+        ```javascript
+        $('#kwicks').kwicks(1, function(obj){ // obj = kwicks object
+          alert('Now on panel #' + obj.active);
+        });
+        ```
+
+* The `<ul>` and `<li>` structure is no longer required - use any elements.
+* Added a ".kwicks" namespace to internal events (event, eventClose, etc) - this doesn't change the callback/events that are triggered.
+* Updated demo page to follow HTML5 formatting.
+* General script cleanup.
+* Moved documentation to the wiki pages.

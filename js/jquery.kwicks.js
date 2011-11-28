@@ -8,8 +8,7 @@
 
 	Any and all use of this script must be accompanied by this copyright/license notice in its present form.
 
-	11/24/2011: version 2.1 - slideshow & cleanup
-	11/8/2010 : version 2.0 - Changed plugin format, updated & added a github repository - Rob Garrison
+	11/28/2011: version 2.1.1 - kwick doesn't open if mouseenter & mouseleave quickly
 */
 
 (function($){
@@ -135,7 +134,7 @@
 				// check time - in case both 'event' and 'eventClose' are 'click'
 				// timestamp broken in jQuery 1.7+, so grabbing a date instead
 				var time = (new Date()).getTime();
-				if (time - base.lastEvent < 200) { return; }
+				if (time - base.lastEvent < 200 && o.event === o.eventClose) { return; }
 				base.lastEvent = time;
 				if ($(this).is('.' + o.activeClass)){
 					base.closeKwick();
