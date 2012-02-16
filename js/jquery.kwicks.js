@@ -4,11 +4,11 @@
 	http://www.jeremymartin.name/projects.php?project=kwicks
 	
 	Licensed under the MIT license:
-		http://www.opensource.org/licenses/mit-license.php
+	http://www.opensource.org/licenses/mit-license.php
 
 	Any and all use of this script must be accompanied by this copyright/license notice in its present form.
 
-	11/28/2011: version 2.1.1 - kwick doesn't open if mouseenter & mouseleave quickly
+	2/16/2012: version 2.1.2
 */
 
 (function($){
@@ -141,6 +141,8 @@
 				}
 			});
 
+			base.triggerEvent('initialized');
+
 		};
 
 		base.openKwick = function(num, playing, callback){
@@ -257,7 +259,7 @@
 				base.openKwick(indx, true);
 			} else {
 				base[ (indx < 0 || indx >= base.size) ? 'closeKwick' : 'openKwick'](indx, true);
-				indx = (indx >= base.size) ? -1 : indx < 0 ? base.size - 1 : indx;
+				indx = (indx >= base.size) ? -1 : indx < 0 ? base.size : indx;
 				indx += o.showNext;
 			}
 			base.timer = setTimeout(function(){
@@ -317,14 +319,6 @@
 		// *** Callbacks ***         // not shown, but still available
 	};
 
-	$.fn.kwicks = function(options){
-		return this.each(function(){
-			// don't allow multiple instances
-			if ($(this).data('kwicks')) { return; }
-			(new $.kwicks(this, options));
-		});
-	};
-
 	$.fn.getkwicks = function(){
 		return this.data('kwicks');
 	};
@@ -357,6 +351,5 @@
 
 		});
 	};
-
 
 })(jQuery);

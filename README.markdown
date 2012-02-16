@@ -13,7 +13,7 @@
 ###**Demos &amp; Documentation**
 * [Demo](http://mottie.github.com/Kwicks)
 * [Basic Demo](http://mottie.github.com/Kwicks/basic.html)
-* [Playground](http://jsfiddle.net/Mottie/y5Hty/)
+* [Playground](http://jsfiddle.net/Mottie/DGEQn/)
 * [Home](https://github.com/Mottie/Kwicks/wiki)
 * [Setup](https://github.com/Mottie/Kwicks/wiki/Setup)
 * [Methods](https://github.com/Mottie/Kwicks/wiki/Methods)
@@ -23,11 +23,16 @@
 
 ###**Recent Changes**
 
-####Version 2.1.1 (11/28/2011)
+#### Version 2.1.2 (2/16/2012)
+
+* Added an `initialized` callback which is triggered/called after Kwicks has initialized.
+* Fixed an issue with setting options `showNext` to `-1` and `sticky` to `true` not showing the last kwick.
+
+#### Version 2.1.1 (11/28/2011)
 
 * Kwick no longer opens if you mouseenter & mouseleave quickly. Fix for [issue #2](https://github.com/Mottie/Kwicks/issues/2).
 
-####Version 2.1 (11/24/2011)
+#### Version 2.1 (11/24/2011)
 
 * Fixed a problem that was happening in jQuery v1.7+ ([bug report](https://github.com/Mottie/Kwicks/issues/1)) where the kwicks would not collapse. Fix for [issue #1](https://github.com/Mottie/Kwicks/issues/1).
 * Added slideshow options:

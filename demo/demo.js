@@ -6,7 +6,6 @@ $(function() {
 		if (events.length > 6) { events.eq(0).remove(); }
 	};
 
-
 	$('#basic').kwicks({
 		event : 'click',
 		eventClose: 'click',
