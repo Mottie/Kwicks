@@ -23,6 +23,11 @@
 
 ###**Recent Changes**
 
+#### Version 2.1.3 (5/21/2012)
+
+* Modified how kwick panels are indexed. This should fix [issue #6](https://github.com/Mottie/Kwicks/issues/6) which involves using kwicks with [PIE](http://css3pie.com/).
+* Added `package.json` file for registration with jQuery plugins. 
+
 #### Version 2.1.2 (2/16/2012)
 
 * Added an `initialized` callback which is triggered/called after Kwicks has initialized.

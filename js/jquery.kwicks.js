@@ -1,4 +1,4 @@
-/*
+/*!
 	Kwicks for jQuery
 	Copyright (c) 2008 Jeremy Martin
 	http://www.jeremymartin.name/projects.php?project=kwicks
@@ -8,10 +8,9 @@
 
 	Any and all use of this script must be accompanied by this copyright/license notice in its present form.
 
-	2/16/2012: version 2.1.2
+	5/21/2012: version 2.1.3
 */
-
-(function($){
+;(function($){
 	$.kwicks = function(el, options){
 		// To avoid scope issues, use 'base' instead of 'this'
 		// to reference this class from internal events and functions.
@@ -93,6 +92,7 @@
 			// loop through all kwick elements
 			base.$kwicks.each(function(i) {
 				var kwick = $(this);
+				$.data(this, 'index', i);
 
 				// add unique class to each kwick
 				kwick.addClass('kwick' + (i+1));
@@ -126,7 +126,7 @@
 				position: 'absolute'
 			})
 			.bind(o.event + '.kwicks', function() {
-				var indx = $(this).index();
+				var indx = $.data(this, 'index');
 				base.openKwick(indx);
 			})
 			// Reset (collapse) kwicks panel
@@ -136,7 +136,7 @@
 				var time = (new Date()).getTime();
 				if (time - base.lastEvent < 200 && o.event === o.eventClose) { return; }
 				base.lastEvent = time;
-				if ($(this).is('.' + o.activeClass)){
+				if ($(this).hasClass(o.activeClass)){
 					base.closeKwick();
 				}
 			});
@@ -150,23 +150,23 @@
 			// inside an each loop - which doesn't look right to me, but I'm being lazy.
 			// So, instead of completely rewritting it, I made this shortcut.
 			if (/\d/.test(num) && !isNaN(num)) {
-				var j, maxDif, prevWoHsMaxDifRatio, percentage, 
+				var j, maxDif, prevWoHsMaxDifRatio, percentage,
 					prevWoHs = [], // prevWoHs = previous Widths or Heights
 					prevLoTs = [], // prevLoTs = previous Left or Tops
 					i = parseInt($.trim(num),10), // accepts "  2  "
 					kwick = base.$kwicks.eq(i);
 				// ignore if out of range or already active
-				if (i < 0 || i > base.size - 1 || kwick.is('.' + o.activeClass)) {
+				if (i < 0 || i > base.size - 1 || kwick.hasClass(o.activeClass)) {
 					if (typeof callback === 'function') { callback(base); }
 					return;
 				}
-				// save timestamp to prevent closeKwick from running in case 'event' and 'evenClose' are the same
+				// save timestamp to prevent closeKwick from running in case 'event' and 'eventClose' are the same
 				base.lastEvent = (new Date()).getTime();
 				// update active variables & trigger event
 				base.$kwicks.stop().removeClass(o.activeClass);
 				base.lastActive = base.active;
 				base.$active = kwick;
-				base.active = base.$kwicks.index(kwick);
+				base.active = $.data(kwick[0], 'index');
 				kwick.addClass(o.activeClass);
 				if (playing !== true) { base.pause(); }
 				base.triggerEvent('init');
@@ -243,7 +243,7 @@
 		};
 
 		base.play = function(indx, isPlaying){
-			 // make sure we aren't already playing when play is called again
+			// make sure we aren't already playing when play is called again
 			if (!isPlaying) { base.pause(); }
 			if (!base.playing) {
 				base.triggerEvent('playing');
@@ -281,7 +281,7 @@
 
 		// Methods
 		base.isActive = function(){
-			return base.$kwicks.is('.' + o.activeClass);
+			return base.$kwicks.hasClass(o.activeClass);
 		};
 		base.getActive = function(){
 			return (base.isActive()) ? base.active : -1;
