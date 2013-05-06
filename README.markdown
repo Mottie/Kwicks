@@ -1,3 +1,10 @@
+# Kwicks 2.0.0 Released
+
+* Jeremy Martin has released an [offical Kwicks update of version 2.0.0](http://devsmash.com/blog/kwicks-2-dot-0-dot-0).
+* Please use his [Kwicks](https://github.com/jmar777/kwicks) Github repository, as I will stop development on this fork.
+
+## Forked version (no longer in development)
+
 ###**Features**
 
 * Updated version of [Kwicks for jQuery 1.5.1](http://www.jeremymartin.name/projects.php?project=kwicks) by Jeremy Martin.
